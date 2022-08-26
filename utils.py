@@ -68,7 +68,6 @@ def get_all_offers():
 
 def update_user(model, user_id, values):
     data = db.session.query(model).get(user_id)
-    data.id = values.get('id')
     data.first_name = values.get('first_name')
     data.last_name = values.get('last_name')
     data.age = values.get('age')
@@ -80,7 +79,6 @@ def update_user(model, user_id, values):
 
 def update_order(model, order_id, values):
     data = db.session.query(model).get(order_id)
-    data.id = values.get('id')
     data.name = values.get('name')
     data.description = values.get('description')
     data.start_date = values.get('start_date')
@@ -93,7 +91,6 @@ def update_order(model, order_id, values):
 
 def update_offer(model, offer_id, values):
     data = db.session.query(model).get(offer_id)
-    data.id = values.get('id')
     data.order_id = values.get('order_id')
     data.executor_id = values.get('executor_id')
     db.session.commit()
